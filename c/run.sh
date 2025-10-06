@@ -1,0 +1,1 @@
+gcc main.c utils.c bmp_lib.c queue.c -O2 -o main -lm && ./main --map map_example.bmp
