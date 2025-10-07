@@ -1,4 +1,4 @@
-# Overview
+# **Overview**
 
 The task is implemented in 2 programming languages, each in its own subfolder. For each language, build and run instructions are below.
 
@@ -6,9 +6,9 @@ The program generates a map file according to a few parameters, and saves it to 
 
 > *Note: The default map generation settings may not always produce a traversable map. Use the included map_example file if you want to be sure it is traversable. Use the `--help` argument to find out how to pass a pregenerated map*
 
-# C
+# **C**
 
-### To compile:
+## To compile:
 Run the following command in the `c` subdirectory,
 ```
 gcc main.c utils.c bmp_lib.c queue.c -O2 -o main -lm
@@ -16,7 +16,7 @@ gcc main.c utils.c bmp_lib.c queue.c -O2 -o main -lm
 OR, use the included `run.sh` script on linux
 > Tested with gcc version 11.4.0 in Ubuntu WSL, but it *should* work on any non-ancient version of gcc, on any platform
 
-### To run:
+## To run:
 ```
 ./main
 ```
@@ -26,9 +26,9 @@ The C version does not include a cost map.
 
 > Supports 24-bit BMP files
 
-# Rust
+# **Rust**
 
-### To compile/run:
+## To compile/run:
 Run the following command in the `rust` subdirectory:
 ```
 cargo run
@@ -49,6 +49,7 @@ cargo run -- --help
 ```
 
 > Supports BMPs and PNGs[^1]
+
 
 
 [^1]: Technically can support any image format that the `image` crate supports, but it has to be lossless. Just specify the extension with the `--format` argument (ex: "cargo run -- --format png")
