@@ -1,11 +1,20 @@
+# Overview
+
+The task is implemented in 2 programming languages, each in its own subfolder. For each language, build and run instructions are below.
+
+The program generates a map file according to a few parameters, and saves it to a file (ex: map.bmp or map.png). It then traverses the map according to the restrictions in the problem descriptions, prints the path to the console, and generates an image representing the path by overlaying the path on the blue channel of the image. The path image is then also saved (ex: path.bmp or path.png)
+
+> *Note: The default map generation settings may not always produce a traversable map. Use the included map_example file if you want to be sure it is traversable. Use the `--help` argument to find out how to pass a pregenerated map*
+
 # C
 
 ### To compile:
-Run the following command in the c subdirectory,
+Run the following command in the `c` subdirectory,
 ```
 gcc main.c utils.c bmp_lib.c queue.c -O2 -o main -lm
 ```
 OR, use the included `run.sh` script on linux
+> Tested with gcc version 11.4.0 in Ubuntu WSL, but it *should* work on any non-ancient version of gcc, on any platform
 
 ### To run:
 ```
@@ -15,4 +24,31 @@ Use `./main --help` for a list of options
 
 The C version does not include a cost map.
 
-> _Note: The default map generation settings may not always produce a traversable map. Use the included map_example file if you want to be sure it is traversable_
+> Supports 24-bit BMP files
+
+# Rust
+
+### To compile/run:
+Run the following command in the `rust` subdirectory:
+```
+cargo run
+```
+> Tested with cargo version 1.9.0 on Windows 11, but it *should* work on any version that implements rustedition2024 (>=1.85.0), on any platform
+
+To pass arguments to the program, use
+```
+cargo run -- {arg1} {arg2} ...
+```
+Examples:
+```
+cargo run -- --map map_example.png
+```
+For more information on avaliable arguments, run:
+```
+cargo run -- --help
+```
+
+> Supports BMPs and PNGs[^1]
+
+
+[^1]: Technically can support any image format that the `image` crate supports, but it has to be lossless. Just specify the extension with the `--format` argument (ex: "cargo run -- --format png")
