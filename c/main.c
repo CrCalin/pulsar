@@ -200,6 +200,7 @@ int main(int argc, char* argv[])
             path[path_size++] = curr_pos;
             curr_pos = visited[curr_pos.i][curr_pos.j];
         }
+		
         printf("path size: %d\n", path_size);
         for(int i = path_size - 1; i >= 0; i--) {
             printf("%d: (%d; %d)\n", path_size - i, path[i].i, path[i].j);
