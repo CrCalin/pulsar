@@ -12,3 +12,5 @@ OR, use the included `run.sh` script on linux
 ./main
 ```
 Use `./main --help` for a list of options
+
+The C version does not include a cost map.

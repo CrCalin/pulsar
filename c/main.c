@@ -110,7 +110,7 @@ int main(int argc, char* argv[])
                 char* num = argv[++i];
                 stof_error_t err = my_stof(num, &MAP_DENSITY);
                 if(err != STOF_SUCCESS) {
-                    printf("Invalid map0 density\n");
+                    printf("Invalid map density\n");
                     return 0;
                 }
             }
@@ -124,12 +124,12 @@ int main(int argc, char* argv[])
                 char* num = argv[++i];
                 stoi_error_t err = my_stoi(num, &MAP_AMPLITUDE);
                 if(err != STOI_SUCCESS) {
-                    printf("Invalid map size\n");
+                    printf("Invalid map amplitude\n");
                     return 0;
                 }
             }
             else {
-                printf("Map size must be provided after %s!\n", arg);
+                printf("Map amplitude must be provided after %s!\n", arg);
                 return 0;
             }
         }
