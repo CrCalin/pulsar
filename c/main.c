@@ -63,7 +63,7 @@ bool ok_slope(position p1, position p2, float *map)
 
     float angle = atan(y / x);
     // printf("angle: %.2f\n", RAD_TO_DEG(angle));
-    return angle < MAX_ANGLE;
+    return angle <= MAX_ANGLE;
 }
 
 int main(int argc, char *argv[])
