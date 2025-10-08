@@ -6,6 +6,8 @@ The program generates a map file according to a few parameters, and saves it to 
 
 > *Note: The default map generation settings may not always produce a traversable map. Use the included map_example file if you want to be sure it is traversable. Use the `--help` argument to find out how to pass a pregenerated map*
 
+
+
 # **C**
 
 ## To compile:
@@ -25,6 +27,8 @@ Use `./main --help` for a list of options
 The C version does not include a cost map.
 
 > Supports 24-bit BMP files
+
+
 
 # **Rust**
 
@@ -48,6 +52,10 @@ For more information on avaliable arguments, run:
 cargo run -- --help
 ```
 
+> Supports BMPs and PNGs[^1]
+
+
+
 # **Python**
 
 ## Setup:
@@ -63,7 +71,7 @@ Usage:
 
 ## Run:
 After running the setup script, the venv will be automatically activated. From there just run `python main.py` with any arguments you may want to pass.
-> Tested with python version 3.10.6 on Windows, but it *should* work on any non-ancient version of Python, on any platform that supports the `pillow` library
+> Tested with python version 3.10.6 on Windows, but it *should* work on any non-ancient version of Python, on any platform that supports the `pillow` library</br>
 Examples:
 ```
 python main.py --map map_example.png
