@@ -2,4 +2,6 @@
 /rust/maps
 /c/main
 /c/path.*
+/c/map.*
 /rust/path.*
+/rust/map.*
