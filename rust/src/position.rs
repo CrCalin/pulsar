@@ -6,6 +6,15 @@ pub struct Position {
     pub i: i32, pub j: i32
 }
 
+impl Position {
+    pub fn distance_to(&self, other: &Position) -> f32 {
+        let i = (self.i - other.i).abs() as f32;
+        let j = (self.j - other.j).abs() as f32;
+
+        (i*i + j*j).sqrt()
+    }
+}
+
 impl<T> Index<Position> for Vec<Vec<T>> {
     type Output = T;
 

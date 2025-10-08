@@ -35,6 +35,10 @@ fn gen_map(map_size: usize, params: MapParams) -> RgbImage {
     img.into_rgb8()
 }
 
+fn cost(p1: Position, p2: Position, map: &Vec<Vec<f32>>) -> f32 {
+    angle(p1, p2, map) + p1.distance_to(&p2) / 10.0
+}
+
 fn main() {
     let mut map_params = MapParams{size: 100, density: 0.5, amplitude: 48};
 
@@ -162,7 +166,7 @@ fn main() {
     distance[init] = 0.0;
     let mut q = BinaryHeap::new();
     q.push(LenPos{len: 0.0, pos: init, from: init});
-    // Dijkstra's using the absolute value of the angle as a cost map
+    // Dijkstra's using (the absolute value of the angle in radians) + (the horizontal distance between the points) / 10.0 as a cost map
     while !q.is_empty() {
         let LenPos{len, pos, from} = q.pop().unwrap();
         if visited[pos] != None {
@@ -177,7 +181,7 @@ fn main() {
         for i in 0usize..dir {
             let new_pos = pos + get_d(dir, i);
             if in_bounds(new_pos, 0, map_params.size as i32 - 1) && ok_angle(pos, new_pos, &map) {
-                let new_dist = len + angle(pos, new_pos, &map);
+                let new_dist = len + cost(pos, new_pos, &map);
                 if new_dist < distance[new_pos] {
                     distance[new_pos] = new_dist;
                     q.push(LenPos { len: new_dist, pos: new_pos, from: pos });

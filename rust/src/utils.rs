@@ -8,9 +8,7 @@ fn height(x: f32) -> f32 {
     x * 3.0
 }
 pub fn angle(p1: Position, p2: Position, map: &Vec<Vec<f32>>) -> f32 {
-    let i = (p1.i - p2.i).abs() as f32;
-    let j = (p1.j - p2.j).abs() as f32;
-    let x = length((i*i + j*j).sqrt());
+    let x = length(p1.distance_to(&p2));
     let y = height((map[p1] - map[p2]).abs());
 
     (y/x).atan()

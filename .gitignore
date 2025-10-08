@@ -1,2 +1,5 @@
 /rust/target
 /rust/maps
+/c/main
+/c/path.*
+/rust/path.*
