@@ -148,7 +148,11 @@ fn main() {
         };
     } else {
         pixels = image::open(map_file_name).unwrap().to_rgb8();
-        map_params.size = pixels.width() as usize;
+        if pixels.width() != pixels.height() {
+			println!("Image must be exactly square");
+			return;
+		}
+		map_params.size = pixels.width() as usize;
     }
 
     let mut map = vec![vec![0_f32; map_params.size]; map_params.size];
