@@ -6,7 +6,7 @@ The program generates a map file according to a few parameters, and saves it to 
 
 > *Note: The default map generation settings may not always produce a traversable map. Use the included map_example file if you want to be sure it is traversable. Use the `--help` argument to find out how to pass a pregenerated map*
 
-
+</br>
 
 # **C**
 
@@ -27,8 +27,7 @@ Use `./main --help` for a list of options
 The C version does not include a cost map.
 
 > Supports 24-bit BMP files
-
-
+</br>
 
 # **Rust**
 
@@ -53,8 +52,7 @@ cargo run -- --help
 ```
 
 > Supports BMPs and PNGs[^1]
-
-
+</br>
 
 # **Python**
 
@@ -84,3 +82,4 @@ python main.py --help
 
 [^1]: Technically can support any image format that the `image` crate supports, but it has to be lossless. Just specify the extension with the `--format` argument (ex: "cargo run -- --format png")
 [^2]: Technically can support any image format that the `pillow` library supports, but you should *really* use a lossless format. Just specify the extension with the `--format` argument (ex: "cargo run -- --format png")
+
