@@ -49,21 +49,22 @@ impl Add for Position {
     }
 }
 
+// Starting right, then clockwise
 const D4: [Position; 4] = [
-    Position{i: -1, j: 0},
     Position{i: 0, j: 1},
     Position{i: 1, j: 0},
     Position{i: 0, j: -1},
+    Position{i: -1, j: 0},
 ];
 const D8: [Position; 8] = [
-    Position{i: -1, j: 0},
-    Position{i: -1, j: 1},
     Position{i: 0, j: 1},
     Position{i: 1, j: 1},
     Position{i: 1, j: 0},
     Position{i: 1, j: -1},
     Position{i: 0, j: -1},
     Position{i: -1, j: -1},
+    Position{i: -1, j: 0},
+    Position{i: -1, j: 1},
 ];
 pub fn get_d(nr_dir: usize, i: usize) -> Position {
     match nr_dir {

@@ -51,7 +51,7 @@ fn main() {
             println!("Format: {{command}};{{arguments{{:default}}}}: {{description}}");
             println!("--help, -h;: prints this help screen");
             println!("--format, -f;{{\"bmp\"|\"png\"}}: set the format to use for a newly generated map and for the output path");
-            println!("--map, -m;{{file_name}}: provide a pre-generated map. if not specified, a new map is generated and saved to map.bmp");
+            println!("--map, -m;{{file_name}}: provide a pre-generated map. The image MUST be square. if not specified, a new map is generated and saved to map.bmp");
             println!("--mapsize, -s;{{int:{}}}: sets the map size in px", map_params.size);
             println!("--mapdens, -d;{{float:{:.2}}}: sets the map density", map_params.density);
             println!("--mapamplitude, -a;{{int[0-255]:{}}}: sets the map amplitude", map_params.amplitude);
@@ -144,6 +144,7 @@ fn main() {
         };
     } else {
         pixels = image::open(map_file_name).unwrap().to_rgb8();
+        map_params.size = pixels.width() as usize;
     }
 
     let mut map = vec![vec![0_f32; map_params.size]; map_params.size];
