@@ -48,8 +48,31 @@ For more information on avaliable arguments, run:
 cargo run -- --help
 ```
 
-> Supports BMPs and PNGs[^1]
+# **Python**
+
+## Setup:
+Included in the `python` subdirectory are 3 setup scripts, one for batch (Windows CMD), one for PowerShell, and one for bash
+Run them to set up a venv and install the dependencies
+
+Usage:
+```
+> setup.bat
+> .\setup.ps1
+> ./setup.sh
+```
+
+## Run:
+After running the setup script, the venv will be automatically activated. From there just run `python main.py` with any arguments you may want to pass.
+> Tested with python version 3.10.6 on Windows, but it *should* work on any non-ancient version of Python, on any platform that supports the `pillow` library
+Examples:
+```
+python main.py --map map_example.png
+python main.py --help
+```
+
+> Supports BMPs and PNGs[^2]
 
 
 
 [^1]: Technically can support any image format that the `image` crate supports, but it has to be lossless. Just specify the extension with the `--format` argument (ex: "cargo run -- --format png")
+[^2]: Technically can support any image format that the `pillow` library supports, but you should *really* use a lossless format. Just specify the extension with the `--format` argument (ex: "cargo run -- --format png")

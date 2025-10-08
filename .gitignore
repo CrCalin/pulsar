@@ -5,3 +5,6 @@
 /c/map.*
 /rust/path.*
 /rust/map.*
+/python/venv
+/python/map.png
+/python/path.png
