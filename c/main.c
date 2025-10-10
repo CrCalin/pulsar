@@ -160,6 +160,10 @@ int main(int argc, char *argv[])
         {
             dir = 8;
         }
+		else {
+			printf("Unknown argument: %s", arg);
+			return 0;
+		}
     }
 
     pixel(*pixels)[MAP_SIZE];
