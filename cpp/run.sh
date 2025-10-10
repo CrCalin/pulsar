@@ -1,0 +1,1 @@
+g++ main.cpp utils.cpp bmp_lib.cpp -o main && ./main --map map_example.bmp

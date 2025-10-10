@@ -77,6 +77,28 @@ python main.py --help
 ```
 
 > Supports BMPs and PNGs[^2]
+> The python implementation is basically a 1-1 translation of the Rust one.
+
+
+# **C++**
+
+## To compile:
+Run the following command in the `cpp` subdirectory,
+```
+g++ main.cpp utils.cpp bmp_lib.cpp -O2 -o main
+```
+OR, use the included `run.sh` script on linux
+> Tested with g++ version 11.4.0 in Ubuntu WSL, but it *should* work on any non-ancient version of g++, on any platform
+
+## To run:
+```
+./main
+```
+Use `./main --help` for a list of options
+
+> Supports 24-bit BMP files
+> This version is basically a 1-1 translation of the C version, but using classes, and implementing a cost map
+> It's also the least well tested because i ran out of time
 
 
 
