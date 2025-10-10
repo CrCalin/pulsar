@@ -97,13 +97,14 @@ OR, use the included `run.sh` script on linux
 ```
 Use `./main --help` for a list of options
 
-> Supports 24-bit BMP files
-> This version is basically a 1-1 translation of the C version, but using classes, and implementing a cost map
-> It's also the least well tested because i ran out of time
+> Supports 24-bit BMP files</br>
+> This version is basically a 1-1 translation of the C version, but using classes, and implementing a cost map</br>
+> It's also the least well tested because i ran out of time</br>
 
 
 
 [^1]: Technically can support any image format that the `image` crate supports, but it has to be lossless. Just specify the extension with the `--format` argument (ex: "cargo run -- --format png")
 [^2]: Technically can support any image format that the `pillow` library supports, but you should *really* use a lossless format. Just specify the extension with the `--format` argument (ex: "cargo run -- --format png")
+
 
 
