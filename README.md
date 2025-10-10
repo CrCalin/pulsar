@@ -79,6 +79,7 @@ python main.py --help
 > Supports BMPs and PNGs[^2]
 > The python implementation is basically a 1-1 translation of the Rust one.
 
+</br>
 
 # **C++**
 
@@ -104,4 +105,5 @@ Use `./main --help` for a list of options
 
 [^1]: Technically can support any image format that the `image` crate supports, but it has to be lossless. Just specify the extension with the `--format` argument (ex: "cargo run -- --format png")
 [^2]: Technically can support any image format that the `pillow` library supports, but you should *really* use a lossless format. Just specify the extension with the `--format` argument (ex: "cargo run -- --format png")
+
 
