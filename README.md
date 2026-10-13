@@ -1,6 +1,8 @@
+**UPDATE 2026:** I unfortunately can not find the original problem statement. Don't know why i didn't just add it to the repo... I went ahead and had an AI reconstruct the problem statement from the code and README.md. The reconstructed problem statement can be found in STATEMENT_RECONSTRUCTED.md.
+
 # **Overview**
 
-The task is implemented in 2 programming languages, each in its own subfolder. For each language, build and run instructions are below.
+The task is implemented in 4 programming languages, each in its own subfolder. For each language, build and run instructions are below.
 
 The program generates a map file according to a few parameters, and saves it to a file (ex: map.bmp or map.png). It then traverses the map according to the restrictions in the problem descriptions, prints the path to the console, and generates an image representing the path by overlaying the path on the blue channel of the image. The path image is then also saved (ex: path.bmp or path.png)
 
